@@ -13,10 +13,7 @@ namespace LabelledSections
         {
 			var tabs = new TabbedPage ();
 
-			tabs.Children.Add(new LabelledSectionPage {Title = "C#" });
-			tabs.Children.Add(new LabelledSectionXaml {Title = "XAML" });
-
-			MainPage = tabs;
+            MainPage = new LabelledSectionXaml { Title = "XAML" };
         }
     }
 }

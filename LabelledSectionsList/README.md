@@ -3,8 +3,8 @@ LabelledSections
 	
 This sample demonstrates how to create an alphabetically ordered list with labelled sections.
 
-LabelledSections is based off of https://github.com/xamarin/monodroid-samples/tree/master/LabelledSections
+Specifically, this is a example of GroupDisplayBinding loading the data into a ObservableCollection. The original example did not use a MVVM model. This updated example does use MVVM.
 	
-Author
+Original Author
 ------
 Peter Collins
