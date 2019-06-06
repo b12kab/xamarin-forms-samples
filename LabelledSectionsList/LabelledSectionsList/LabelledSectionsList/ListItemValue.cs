@@ -19,7 +19,7 @@ namespace LabelledSections
 
         int IComparable<ListItemValue>.CompareTo(ListItemValue value)
         {
-            return Name.CompareTo(value.Name);
+            return string.Compare(Name, value.Name, StringComparison.Ordinal);
         }
 
         public string Label

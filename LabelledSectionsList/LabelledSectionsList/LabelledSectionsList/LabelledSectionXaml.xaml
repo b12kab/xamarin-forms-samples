@@ -4,41 +4,39 @@
 			 x:Class="LabelledSections.LabelledSectionXaml"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
-			 Padding="0,20,0,0">
+			 >
+<!--    Note: the title is useless without a navigation page-->
+<!--             Title = "XAML"-->
 
-    <ListView ItemsSource="{Binding PeopleList}"
+    <ListView HasUnevenRows="true"
+              ItemsSource="{Binding PeopleList}"
               SelectedItem="{Binding YourSelectedItem, Mode=TwoWay}"
-              GroupDisplayBinding="{Binding LongTitle}"
               IsGroupingEnabled="true" 
               Header="HEADER"
               Footer="FOOTER">
+        <ListView.GroupHeaderTemplate>
+            <DataTemplate>
+                <ViewCell >
+                    <StackLayout VerticalOptions="FillAndExpand"
+                                 BackgroundColor="Black"
+                                 >
+                        <Label Text="{Binding LongTitle}" 
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               FontSize="Medium"
+                               />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.GroupHeaderTemplate>
         <ListView.ItemTemplate>
             <DataTemplate> 
-              <TextCell Text="{Binding Name}" /> 
+                <ViewCell >
+                    <Label Margin="20,8,0,8"
+                           Text="{Binding Name}" />
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-
-
-    <!-- this works on iOS 7.1 BUT the GroupHeaderTemplate 
-    doesn't show on iOS 8.2 -->
-<!--    <ListView x:Name="itemListView"
-              IsGroupingEnabled="true" 
-              ItemTapped="OnItemTapped"
-      		  >
-      <ListView.GroupHeaderTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <Label Text="{Binding Title}" TextColor="Blue" />
-          </ViewCell>
-        </DataTemplate>
-      </ListView.GroupHeaderTemplate>
-      <ListView.ItemTemplate>
-        <DataTemplate> 
-          <TextCell Text="{Binding Name}" Detail="{Binding Description}"> 
-          </TextCell> 
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>-->
 
 </ContentPage>

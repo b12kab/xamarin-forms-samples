@@ -14,14 +14,14 @@ namespace LabelledSections.Droid
     [Activity(Label = "LabelledSections", Theme = "@style/MainTheme", MainLauncher = true)]
     public class MainActivity : FormsAppCompatActivity
     {
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(bundle);
+            base.OnCreate(savedInstanceState);
 
-            Xamarin.Forms.Forms.Init(this, bundle);
+            Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
 			LoadApplication (new App ());
         }

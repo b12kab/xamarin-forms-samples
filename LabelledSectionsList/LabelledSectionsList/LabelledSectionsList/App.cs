@@ -13,7 +13,7 @@ namespace LabelledSections
         {
 			var tabs = new TabbedPage ();
 
-            MainPage = new LabelledSectionXaml { Title = "XAML" };
+            MainPage = new LabelledSectionXaml();
         }
     }
 }
